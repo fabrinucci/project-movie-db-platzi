@@ -1,7 +1,8 @@
 const trendingSelector = document.querySelector('#trending');
+const categoriesSelector = document.querySelector('#categories');
 
-const API_KEY ='508a25f671b0a06c9ab8aec35944749e';
 const API_URL=`https://api.themoviedb.org/3`;
+const API_KEY ='508a25f671b0a06c9ab8aec35944749e';
 
 /* https://api.themoviedb.org/3/trending/movie/week?api_key=508a25f671b0a06c9ab8aec35944749e  */
 
@@ -18,12 +19,19 @@ const createDiv = (options) => {
   div.append(img);
 
   return div;
+}
 
+const createCategories = (options) => {
+  const a = document.createElement('a');
+  a.setAttribute('href', `${options.url}`)
+  a.textContent = options.categoryName;
+
+  return a; 
 }
 
 const getTrending = async () => {
 
-  const res = await fetch(`${API_URL}/trending/tv/day?api_key=${API_KEY}`);
+  const res = await fetch(`${API_URL}/trending/movie/week?api_key=${API_KEY}`);
   const data = await res.json();
   const movies = data.results;
 
@@ -39,14 +47,32 @@ const getTrending = async () => {
     fragment.append(newDiv)
   })
   trendingSelector.append(fragment);
+}
+
+const getCategory = async () => {
+  const res = await fetch(`${API_URL}/genre/movie/list?api_key=${API_KEY}`)
+  const data = await res.json()
+  const genre = data.genres;
+  console.log(genre);
+
+  const fragment = new DocumentFragment;
+
+  genre.forEach( category => {
+    const categoryDiv = createCategories({
+      id: category.id,
+      categoryName: category.name,
+      url: '#'
+    })
+    fragment.append(categoryDiv);
+  })
+  categoriesSelector.append(fragment)
+
+}
+
+getTrending();
+getCategory();
 
   // id,
   // title,
   // overview,
   // vote_average,
-
-
-  console.log(movies);
-}
-
-getTrending();
