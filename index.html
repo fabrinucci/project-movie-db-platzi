@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,8 +14,151 @@
 <body>
   
   <header>
-    <h1>Hello fellas</h1>
+    <nav class="nav">
+      <div class="nav-logo">
+        <h1>Platzi Movies</h1>
+      </div>
+      <div class="nav-primary">
+        <a href="#">Home</a>
+        <a href="#">Trending Movies</a>
+        <a href="#">Categories</a>
+        <a href="#">Popular</a>
+        <a href="#">Upcoming</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="Search" />
+      </div>
+    </nav>
+
+    <div class="container-header">
+      <div class="header-stats">
+        <p class="header_rating">7.5</p>
+        <p class="header_time">1h 55m</p>
+        <p class="header_trending">Trending</p>
+      </div>
+      <div class="header-movie">
+        <h1>Movie Title</h2>
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reprehenderit soluta temporibus vel minima nobis dolores repudiandae voluptatibus.</h2>
+      </div>
+      <div class="header-buttons">
+        <button class="btn btn-primary">Play</button>
+        <button class="btn btn-secondary">Details</button>
+      </div>
+    </div>
+
   </header>
+
+  <main class="container">
+
+    <section class="section">
+      <div class="section-div">
+        <h2>Trending</h2>
+        <button class="btn btn-primary">See all</button>
+      </div>
+      <div class="container-section" id="trending">
+        <!-- Our iteration -->
+      </div>
+    </section>
+
+    <section class="section sub-section">
+      <h2>Categories</h2>
+      <div class="categories">
+        <h4>Action</h4>
+        <h4>Adventure</h4>
+        <h4>Drama</h4>
+        <h4>Family</h4>
+        <h4>Horror</h4>
+        <h4>Romance</h4>
+        <h4>Science Fiction</h4>
+        <h4>Thriller</h4>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="section-div">
+        <h2>Popular</h2>
+        <button class="btn btn-primary">See all</button>
+      </div>
+      <div class="container-section">
+
+        <div class="display-movie">
+          <img src="assets/movie1.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie2.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie3.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie4.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie5.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie6.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-div">
+        <h2>Upcoming</h2>
+        <button class="btn btn-primary">See all</button>
+      </div>
+      <div class="container-section">
+
+        <div class="display-movie">
+          <img src="assets/movie1.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie2.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie3.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie4.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie5.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+        <div class="display-movie">
+          <img src="assets/movie6.jpg" alt="movie">
+          <h4>Movie Title</h4>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>&copy; All rights reserved | 2022 TMDB</h3>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
