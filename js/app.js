@@ -1,10 +1,13 @@
-const trendingSelector = document.querySelector('#trending');
-const categoriesSelector = document.querySelector('#categories');
 
-const API_URL=`https://api.themoviedb.org/3`;
-const API_KEY ='508a25f671b0a06c9ab8aec35944749e';
-
-/* https://api.themoviedb.org/3/trending/movie/week?api_key=508a25f671b0a06c9ab8aec35944749e  */
+const api = axios.create({
+  baseURL: 'https://api.themoviedb.org/3',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8',
+  },
+  params: {
+    'api_key': API_KEY
+  },
+})
 
 const createDiv = (options) => {
   const div = document.createElement('div');
@@ -22,18 +25,21 @@ const createDiv = (options) => {
 }
 
 const createCategories = (options) => {
-  const a = document.createElement('a');
-  a.setAttribute('href', `${options.url}`)
-  a.textContent = options.categoryName;
+  const h3 = document.createElement('h3');
+  h3.textContent = options.categoryName;
+  h3.addEventListener('click', () => {
+    location.hash = `category=${ options.id }-${ options.categoryName }`
+  })
 
-  return a; 
+  return h3; 
 }
 
 const getTrending = async () => {
 
-  const res = await fetch(`${API_URL}/trending/movie/week?api_key=${API_KEY}`);
-  const data = await res.json();
+  const { data } = await api('/trending/movie/week');
   const movies = data.results;
+
+  trendingSelector.innerHTML = ''
 
   const fragment = new DocumentFragment;
 
@@ -50,27 +56,45 @@ const getTrending = async () => {
 }
 
 const getCategory = async () => {
-  const res = await fetch(`${API_URL}/genre/movie/list?api_key=${API_KEY}`)
-  const data = await res.json()
+  const { data } = await api('/genre/movie/list')
   const genre = data.genres;
-  console.log(genre);
+
+  categoriesSelector.innerHTML = ''
 
   const fragment = new DocumentFragment;
-
+  
   genre.forEach( category => {
     const categoryDiv = createCategories({
       id: category.id,
-      categoryName: category.name,
-      url: '#'
+      categoryName: category.name
     })
     fragment.append(categoryDiv);
   })
   categoriesSelector.append(fragment)
-
 }
 
-getTrending();
-getCategory();
+
+const getMovieByCategory = async ( id ) => {
+  const { data } = await api('/discover/movie', {
+    params: { 'with_genres': id}
+  });
+  const movies = data.results;
+  
+  categorySelector.innerHTML = '';
+  
+  const fragment = new DocumentFragment;
+  
+  movies.forEach( movie => {
+    const movieDiv = createDiv({
+      id: movie.id,
+      class: 'display-movie',
+      img_url: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+      title: movie.title
+    })
+    fragment.append(movieDiv);
+  })
+  categorySelector.append(fragment);
+}
 
   // id,
   // title,

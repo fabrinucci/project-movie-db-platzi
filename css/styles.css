@@ -9,8 +9,7 @@
   --color-secondary: #333333;
   --color-light: #63636380;
   --color-white: #e5e4e4;
-
-  --bg-img: linear-gradient(to top, #132a54 5%, #132a54 10%, #050f1f 100%);
+  --bg-img: linear-gradient(to top, #132a54 5%, #132a54 10%, #0b1b36 100%);
 }
 
 body {
@@ -67,15 +66,38 @@ nav {
   margin-right: 50px;
 }
 
+.nav-primary > a:last-child {
+  margin: 0;
+}
+
 .nav-primary > a:hover {
   filter: brightness(80%);
 }
 
+.nav-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
 .nav-search > input {
-  padding: 5px;
+  height: 40px;
+  width: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px 0 0 8px;
   outline: none;
+  padding-left: 5px;
+}
+
+.nav-search > button {
+  height: 40px;
+  width: 56px;
+  border: none;
+  border-left: 1px solid;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  background-color: #e13c2f;
 }
 
 /* Nav End */
@@ -136,6 +158,13 @@ header {
 
 /* MAIN */
 
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
 .section {
   padding: 60px 0;
   color: var(--color-white);
@@ -161,9 +190,9 @@ header {
 }
 
 .display-movie > img {
-  width: 90%;
+  width: 80%;
   height: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 10px;
 }
 
@@ -175,6 +204,19 @@ header {
   text-align: center;
 }
 
+.categories-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.categories-arrow {
+  font-weight: var(--font-weight-text2);
+  font-size: 36px;
+  cursor: pointer;
+}
+
+
 .categories {
   display: flex;
   justify-content: space-evenly;
@@ -182,19 +224,18 @@ header {
   margin: 30px;
 }
 
-.categories > a {
-  background: var(--color-secondary);
+.categories > h3 {
   text-align: center;
   padding: 10px 20px;
   border-radius: 10px;
-  border: 2px solid var(--color-secondary);
+  border: 2px solid var(--color-white);
   margin: 20px 20px 0 0;
   cursor: pointer;
   color: var(--color-white);
   transition: all .3s ease-in-out;
 }
 
-.categories > a:hover {
+.categories > h3:hover {
   background: var(--color-white);
   color: var(--color-secondary);
 }
@@ -207,6 +248,7 @@ header {
 footer {
   padding: 20px;
   border-top: 1px solid var(--color-primary);
+  height: 100%;
 }
 
 footer > h3 {
@@ -252,3 +294,16 @@ footer > h3 {
   background: #fff;
   color: var(--color-secondary)
 }
+
+
+
+/* Nodes */
+
+.btn-active {
+
+}
+
+.inactive {
+  display: none;
+}
+
