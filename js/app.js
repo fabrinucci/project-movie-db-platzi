@@ -74,7 +74,7 @@ const getCategory = async () => {
 }
 
 
-const getMovieByCategory = async ( id ) => {
+const getMoviesByCategory = async ( id ) => {
   const { data } = await api('/discover/movie', {
     params: { 'with_genres': id}
   });

@@ -63,7 +63,7 @@ function categoryPage() {
 
   categoryTitle.textContent = categoryName;
 
-  getMovieByCategory(categoryId);
+  getMoviesByCategory(categoryId);
 
 }
 
