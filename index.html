@@ -21,29 +21,33 @@
       <div class="nav-primary">
         <a href="#home">Home</a>
         <a href="#trending">Trending</a>
-        <a href="#">Categories</a>
+        <a href="#category=">Categories</a>
         <a href="#">FAQ</a>
       </div>
       <form id="searchForm" class="nav-search">
-        <input type="text" placeholder="Search" />
+        <input id="input-search" type="text" placeholder="Search" />
         <button id="btn-search">🔍</button>
       </form>
     </nav>
 
+    <div class="header-img">
+
+    </div>
+
     <div id="container-header" class="container-header">
-      <div class="header-stats">
+      <!-- <div class="header-stats">
         <p class="header_rating">7.5</p>
         <p class="header_time">1h 55m</p>
         <p class="header_trending">Trending</p>
-      </div>
-      <div class="header-movie">
+      </div> -->
+      <!-- <div class="header-movie">
         <h1>Movie Title</h2>
         <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et reprehenderit soluta temporibus vel minima nobis dolores repudiandae voluptatibus.</h2>
-      </div>
-      <div class="header-buttons">
+      </div> -->
+      <!-- <div class="header-buttons">
         <button class="btn btn-primary">Play</button>
         <button class="btn btn-secondary">Details</button>
-      </div>
+      </div> -->
     </div>
 
   </header>
@@ -52,19 +56,10 @@
 
     <section id="section-search" class="section">
       <div class="search-section">
-        <h2>Your search: </h2>
+        <h2 id="search-text"></h2>
         <span id="arrow" class="categories-arrow">&lt;</span>
       </div>
       <div class="container-section" id="search">
-
-        <div class="display-movie">
-          <img src="assets/movie1.jpg" alt="movie">
-        </div>
-
-        <div class="display-movie">
-          <img src="assets/movie2.jpg" alt="movie">
-        </div>
-
       </div>
     </section>
 
@@ -101,7 +96,7 @@
         <h2>Similar Movies</h2>
         <button class="btn btn-primary">See all</button>
       </div>
-      <div class="container-section">
+      <div class="container-section" id="similar">
 
         <div class="display-movie">
           <img src="assets/movie1.jpg" alt="movie">

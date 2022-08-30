@@ -7,6 +7,8 @@ const headerSelector = $('#container-header')
 const trendingSelector = $('#trending');
 const categoriesSelector = $('#categories');
 const categorySelector = $('#category');
+const searchSelector = $('#search');
+const similarSelector = $('#similar');
 
 
 // Navbar
@@ -19,7 +21,6 @@ const navSearchSelector = $('.nav-search');
 
 // Header
 
-const containerHeader = $('.container-header')
 const headerStats = $('.header-stats')
 const headerRating = $('.header-rating')
 const headerTime = $('.header-time')
@@ -39,7 +40,10 @@ const sectionSimilar = $('#section-similar');
 const sectionSearch = $('#section-search');
 const arrowSelector = $('#arrow');
 
+// Search
+const inputSearch = $('#input-search')
+const btnSearch = $('#btn-search') 
+const textSearch = $('#search-text')
 
 // Buttons 
 const btnTrending = $('#btn-trending') 
-const btnSearch = $('#btn-search') 
