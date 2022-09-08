@@ -40,10 +40,11 @@ function homePage() {
   sectionCategory.classList.add('inactive');
   sectionCategories.classList.remove('inactive');
   sectionSimilar.classList.add('inactive');
-  headerSelector.classList.remove('inactive');
   sectionTrending.classList.remove('inactive');
   sectionSearch.classList.add('inactive');
   arrowSelector.classList.add('inactive');
+  headerSelector.classList.add('inactive');
+  btnTrending.classList.remove('inactive');
 
   headerSelector.style.background = '';
 
@@ -91,7 +92,6 @@ function searchPage() {
   sectionTrending.classList.add('inactive');
   arrowSelector.classList.remove('inactive');
   sectionSimilar.classList.add('inactive');
-  btnTrending.classList.add('inactive');
   sectionCategories.classList.remove('inactive');
   sectionSearch.classList.remove('inactive');
 
@@ -111,6 +111,7 @@ function moviePage() {
   sectionCategories.classList.add('inactive');
   sectionCategory.classList.add('inactive');
   sectionSearch.classList.add('inactive');
+  headerSelector.classList.remove('inactive');
 
   const [, movieId] = location.hash.split('=');
 

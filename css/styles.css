@@ -61,9 +61,10 @@ nav {
   border-bottom: 1px solid var(--color-light);
 }
 
-.nav-logo > h1 {
+.nav-logo > a {
   color: var(--color-primary);
   font-size: 25px;
+  font-weight: 700;
 }
 
 
